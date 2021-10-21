@@ -1,0 +1,25 @@
+@keyframes fadeInToTop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+@keyframes fadeInToLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+  }
+}
+
+@keyframes growX {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}

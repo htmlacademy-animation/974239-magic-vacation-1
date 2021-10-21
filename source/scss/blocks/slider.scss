@@ -65,6 +65,14 @@
   }
 }
 
+.slider__item.swiper-slide-active .slider__item-text {
+  animation: fadeInToLeft 0.5s 0.3s ease both;
+}
+
+.slider__item.swiper-slide-next .slider__item-text {
+  animation: fadeInToLeft 0.5s 0.6s ease both;
+}
+
 .slider__item-title {
   margin: 0 0 0 -5.5rem;
   text-transform: uppercase;
