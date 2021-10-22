@@ -63,6 +63,26 @@ body {
       overflow: hidden;
     }
   }
+
+  &.loaded {
+    .screen__footer {
+      transform: translate3d(0, 0, 0);
+    }
+    .page-header__logo {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+    .page-header__menu {
+      opacity: 1;
+      a.active::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+    .social-block__toggler::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
 }
 
 a {

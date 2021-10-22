@@ -1,5 +1,6 @@
 export default () => {
-  let footerTogglers = document.querySelectorAll(`.js-footer-toggler`);
+  const body = document.querySelector(`body`);
+  const footerTogglers = document.querySelectorAll(`.js-footer-toggler`);
 
   if (footerTogglers.length) {
     for (let i = 0; i < footerTogglers.length; i++) {
@@ -13,4 +14,8 @@ export default () => {
       });
     }
   }
+
+  window.addEventListener(`load`, () => {
+    body.classList.add(`loaded`);
+  });
 };
