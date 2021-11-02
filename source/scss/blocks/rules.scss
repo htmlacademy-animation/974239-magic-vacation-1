@@ -1,10 +1,12 @@
+$list-items-amount: 4;
+
 $bullet-delay: 0.2s;
 $bullet-duration: 0.3s;
 $list-item-text-delay: 0.3s;
 $list-item-text-duration: 0.3s;
 
 $button-duration: 0.3s;
-$button-dealy: $bullet-duration + 3 * $bullet-delay;
+$button-dealy: $bullet-duration + ($list-items-amount - 1) * $bullet-delay;
 
 .rules {
   position: relative;
@@ -152,34 +154,14 @@ $button-dealy: $bullet-duration + 3 * $bullet-delay;
     font-size: 1.2rem;
   }
 
-  &:nth-child(1) {
-    p {
-      animation-delay: $list-item-text-delay;
-    }
-  }
-
-  &:nth-child(2) {
-    &::before {
-      animation-delay: $bullet-delay;
-    }
-    p {
-      animation-delay: $list-item-text-delay + $bullet-delay;
-    }
-  }
-  &:nth-child(3) {
-    &::before {
-      animation-delay: 2 * $bullet-delay;
-    }
-    p {
-      animation-delay: $list-item-text-delay + 2 * $bullet-delay;
-    }
-  }
-  &:nth-child(4) {
-    &::before {
-      animation-delay: 3 * $bullet-delay;
-    }
-    p {
-      animation-delay: $list-item-text-delay + 3 * $bullet-delay;
+  @for $i from 1 to $list-items-amount {
+    &:nth-child(#{$i}) {
+      &::before {
+        animation-delay: (#{$i} - 1) * $bullet-delay;
+      }
+      p {
+        animation-delay: $list-item-text-delay + (#{$i} - 1) * $bullet-delay;
+      }
     }
   }
 
