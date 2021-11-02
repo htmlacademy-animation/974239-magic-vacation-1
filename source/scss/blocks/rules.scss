@@ -1,3 +1,11 @@
+$bullet-delay: 0.2s;
+$bullet-duration: 0.3s;
+$list-item-text-delay: 0.3s;
+$list-item-text-duration: 0.3s;
+
+$button-duration: 0.3s;
+$button-dealy: $bullet-duration + 3 * $bullet-delay;
+
 .rules {
   position: relative;
   flex-grow: 1;
@@ -144,6 +152,37 @@
     font-size: 1.2rem;
   }
 
+  &:nth-child(1) {
+    p {
+      animation-delay: $list-item-text-delay;
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      animation-delay: $bullet-delay;
+    }
+    p {
+      animation-delay: $list-item-text-delay + $bullet-delay;
+    }
+  }
+  &:nth-child(3) {
+    &::before {
+      animation-delay: 2 * $bullet-delay;
+    }
+    p {
+      animation-delay: $list-item-text-delay + 2 * $bullet-delay;
+    }
+  }
+  &:nth-child(4) {
+    &::before {
+      animation-delay: 3 * $bullet-delay;
+    }
+    p {
+      animation-delay: $list-item-text-delay + 3 * $bullet-delay;
+    }
+  }
+
   &::before {
     content: counter(li);
     counter-increment: li;
@@ -159,6 +198,7 @@
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
+    animation: bulletAnimation $bullet-duration ease both;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       top: 1rem;
@@ -179,6 +219,7 @@
 
   p {
     margin: 0;
+    animation: fadeInToLeft $list-item-text-duration ease both;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
@@ -209,5 +250,44 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: none;
+    animation: rulesButtonAnimation $button-duration ease $button-dealy both;
+  }
+}
+
+.rules__link-text {
+  animation: fadeIn 0.3s $button-duration + $button-dealy ease both;
+}
+
+@keyframes rulesButtonAnimation {
+  from {
+    width: 3.5rem;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes bulletAnimation {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
