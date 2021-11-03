@@ -154,13 +154,13 @@ $button-dealy: $bullet-duration + ($list-items-amount - 1) * $bullet-delay;
     font-size: 1.2rem;
   }
 
-  @for $i from 1 to $list-items-amount {
+  @for $i from 1 to $list-items-amount + 1 {
     &:nth-child(#{$i}) {
       &::before {
-        animation-delay: (#{$i} - 1) * $bullet-delay;
+        animation-delay: ($i - 1) * $bullet-delay;
       }
       p {
-        animation-delay: $list-item-text-delay + (#{$i} - 1) * $bullet-delay;
+        animation-delay: $list-item-text-delay + ($i - 1) * $bullet-delay;
       }
     }
   }
