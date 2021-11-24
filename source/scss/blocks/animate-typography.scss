@@ -1,0 +1,30 @@
+.animate-typography {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 0.2em;
+  margin: -0.2em 0.1em 0;
+  &__letter {
+    display: inline-block;
+    padding-right: 0.04em;
+    opacity: 0;
+    transform: translate3d(0, 110%, 0);
+  }
+  &--start &__letter {
+    animation: animateLetter 0.5s ease both;
+  }
+}
+
+@keyframes animateLetter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 110%, 0);
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
