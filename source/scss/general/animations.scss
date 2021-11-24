@@ -37,3 +37,120 @@
     opacity: 1;
   }
 }
+
+@keyframes suitcaseAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  30% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flamingoAnimation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 200px, 0) rotate(-40deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+
+@keyframes flamingoRotation {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+  to {
+    transform: translate3d(0, 20px, 0) rotate(-5deg);
+  }
+}
+
+// 30*exp(-0.8*t) - для 3s
+@keyframes leafRightAnimation {
+  from {
+    opacity: 0;
+    transform: rotate(-30deg);
+  }
+  17% {
+    opacity: 1;
+    transform: rotate(20deg);
+  }
+  33% {
+    transform: rotate(-13deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+  67% {
+    transform: rotate(-6deg);
+  }
+  83% {
+    transform: rotate(4deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes leafLeftAnimation {
+  from {
+    opacity: 0;
+    transform: rotate(30deg);
+  }
+  17% {
+    opacity: 1;
+    transform: rotate(-21deg);
+  }
+  33% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  67% {
+    transform: rotate(7deg);
+  }
+  83% {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes leafGreenAnimation {
+  from {
+    opacity: 0;
+    transform: rotate(-20deg);
+  }
+  17% {
+    opacity: 1;
+    transform: rotate(14deg);
+  }
+  33% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  67% {
+    transform: rotate(-3deg);
+  }
+  83% {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
