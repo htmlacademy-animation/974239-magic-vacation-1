@@ -154,3 +154,48 @@
     transform: rotate(0);
   }
 }
+
+@keyframes inputGrowMobile {
+  from {
+    opacity: 0;
+    width: 6rem;
+    padding: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    padding: 0 2.5rem;
+  }
+}
+
+@keyframes inputGrowStopScaling {
+  from {
+    opacity: 0;
+    width: 60px;
+    padding: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    padding: 0 56px;
+  }
+}
+
+@keyframes inputGrow {
+  from {
+    opacity: 0;
+    width: 6rem;
+    padding: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    padding: 0 5.6rem;
+  }
+}
