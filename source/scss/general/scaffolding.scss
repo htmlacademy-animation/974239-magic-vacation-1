@@ -20,6 +20,8 @@
 
 html {
   box-sizing: border-box;
+  --ui-color: #{$c-dark};
+  --ui-hover: #{$c-purple};
 }
 
 *,
@@ -65,9 +67,6 @@ body {
   }
 
   &.loaded {
-    .screen__footer {
-      transform: translate3d(0, 0, 0);
-    }
     .page-header__logo {
       transform: translate3d(0, 0, 0);
       opacity: 1;
@@ -118,4 +117,18 @@ img {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.body {
+  --ui-color: #{$c-dark};
+  --ui-hover: #{$c-purple};
+
+  &--light {
+    --ui-color: #{$c-darkBlue};
+    --ui-hover: #{$c-lightBlue};
+  }
+  &--blue {
+    --ui-color: #{$c-lightBlue};
+    --ui-hover: #{$c-darkBlue};
+  }
 }

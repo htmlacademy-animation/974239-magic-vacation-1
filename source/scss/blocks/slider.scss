@@ -149,6 +149,8 @@ $two-side-slider-width: 819px;
   width: 17rem;
   z-index: 1;
 
+  animation: fadeIn 0.5s ease 0.5s both;
+
   @media (min-width: $stop-scaling) {
     bottom: 28px;
     width: 170px;
@@ -229,6 +231,14 @@ $two-side-slider-width: 819px;
     }
   }
 
+  &--prev {
+    animation: appearLeftButton 0.5s ease 0.5s both;
+  }
+
+  &--next {
+    animation: appearRightButton 0.5s ease 0.5s both;
+  }
+
   &.swiper-button-disabled {
     opacity: 0.5;
     pointer-events: none;
@@ -247,6 +257,8 @@ $two-side-slider-width: 819px;
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+
+  animation: fadeIn 0.5s ease 0.5s both;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -288,5 +300,49 @@ $two-side-slider-width: 819px;
       height: 0.4rem;
       background-color: $c-light;
     }
+  }
+}
+
+@keyframes appearLeftButton {
+  from {
+    transform: translate3d(calc(-3.14 / 2 * 2rem), 0, 0) rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appearRightButton {
+  from {
+    transform: translate3d(calc(3.14 / 2 * 2rem), 0, 0) rotate(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appearLeftButtonStopScaling {
+  from {
+    transform: translate3d(calc(-3.14 / 2 * 20px), 0, 0) rotate(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appearRightButton {
+  from {
+    transform: translate3d(calc(3.14 / 2 * 20px), 0, 0) rotate(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
   }
 }
