@@ -24,7 +24,7 @@
 
 .result__image-inner {
   position: absolute;
-  
+
   &--leaf-blue-1 {
     width: 355px;
     left: 445px;
@@ -68,7 +68,8 @@
       transform-origin: bottom center;
     }
     &--flamingo {
-      animation: flamingoAnimation 0.5s ease 0.3s both, flamingoRotation 1.5s ease-in-out 0.8s infinite alternate;
+      animation: flamingoAnimation 0.5s ease 0.3s both,
+        flamingoRotation 1.5s ease-in-out 0.8s infinite alternate;
       transform-origin: 175px 200px;
     }
   }
@@ -77,14 +78,14 @@
 .result__image {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);  
+  transform: translateX(-50%);
   bottom: 13%;
   z-index: -1;
   width: 830px;
   height: 440px;
-  
+
   @media (max-width: $mobile) {
-    transform: translateX(-50%) scale(0.6);  
+    transform: translateX(-50%) scale(0.6);
   }
 }
 
@@ -157,6 +158,8 @@
   line-height: 1.2;
   color: $c-light;
 
+  animation: fadeIn 0.5s ease 0.5s both;
+
   @media (min-width: $stop-scaling) {
     margin: auto auto 10px;
     min-width: 340px;
@@ -189,10 +192,13 @@
     height: 4rem;
     color: $c-dark;
 
+    animation: dontGiveUpButton 0.5s ease 0.5s both;
+
     @media (min-width: $stop-scaling) {
       margin-left: 15px;
       width: 40px;
       height: 40px;
+      animation: dontGiveUpButtonStopScaling 0.5s ease 0.5s both;
     }
 
     &::before {
@@ -307,5 +313,24 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: 45rem;
     }
+  }
+}
+
+// x=alpha*R - из условия движения без проскальзывания
+@keyframes dontGiveUpButton {
+  from {
+    transform: translate3d(calc(3.14 / 4 * 2rem), 0, 0) rotate(45deg);
+  }
+  to {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes dontGiveUpButtonStopScaling {
+  from {
+    transform: translate3d(calc(3.14 / 4 * 20px), 0, 0) rotate(45deg);
+  }
+  to {
+    transform: translateX(0) rotate(0);
   }
 }

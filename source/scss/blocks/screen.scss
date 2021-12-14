@@ -38,6 +38,20 @@
   z-index: 1;
 }
 
+.screen.active .screen__footer {
+  transform: translate3d(0, 0, 0);
+  animation: footerAppear 0.35s ease 1.5s both;
+}
+
+@keyframes footerAppear {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .screen__footer {
   position: absolute;
   bottom: 0;
@@ -46,8 +60,6 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
-  transform: translate3d(0, 100%, 0);
-  transition: transform cubic-bezier(0.48, 0.87, 0.58, 1) 0.35s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
